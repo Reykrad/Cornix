@@ -1,7 +1,4 @@
 #Cornix
-Version 0.0.1
+Version 0.0.2
 
 Blog hecho en django
-
-#Dependencias
-<li>django 1.8</li>
