@@ -1,6 +1,6 @@
+#enconding:utf-8
 from django.db import models
 from django.template.defaultfilters import slugify
-from django.contrib.auth.models import User
 
 class Categorias(models.Model):
 	ncate = models.CharField(max_length=15)
@@ -22,9 +22,3 @@ class Articulo(models.Model):
 		if not self.id:
 			self.slug = slugify(self.titulo)
 		super(Articulo, self).save(*arg, **kwargs)
-
-
-#Perfil de usuario
-# class Perfil(models.Model):
-# 	user = models.ForeignKey(User, unique=True)
-# 	twitter = models.CharField(max_length=120)

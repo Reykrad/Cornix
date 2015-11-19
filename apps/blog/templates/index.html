@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cornix</title>
+</head>
+<body>
+	<h1><a href="/">Cornix</a></h1>
+	<span>Django Blog</span>
+
+{% if object_list %}
+	{% for articulo in object_list %}
+		<h2><a href="/articulo/{{articulo.slug}}">{{ articulo.titulo }}</a></h2>
+		<span>{{ articulo.fecha_pub }}</span>
+		<a href="usuario/{{user}}">{{ user }}</a>
+		<a href="/categoria/{{articulo.cat}}">{{ articulo.cat }}</a>
+		<p>{{ articulo.contenido }}</p>
+	{% endfor %}
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                {% endif %}
+                <span class="page-current">
+                    [{{ page_obj.number }} de {{ page_obj.paginator.num_pages }}]
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Siguente</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% else %}
+    <p>No hay Articulos</p>
+{% endif %}
+</body>
+</html>
