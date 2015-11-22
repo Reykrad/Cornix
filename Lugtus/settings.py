@@ -1,4 +1,6 @@
-#Blog v0.0.2
+#Lugtus v0.0.2
+#By Reykrad
+#Django CMS Open Source
 
 import os
 
@@ -35,7 +37,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'Cornix.urls'
+ROOT_URLCONF = 'Lugtus.urls'
 
 TEMPLATES = [
     {
@@ -53,7 +55,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Cornix.wsgi.application'
+WSGI_APPLICATION = 'Lugtus.wsgi.application'
 
 
 DATABASES = {

@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Cornix: {{object.titulo}}</title>
+	<title>Lugtus: {{object.titulo}}</title>
 </head>
 <body>
-	<h1><a href="/">Cornix</a></h1>
-	<span>Django Blog</span>
+	<h1><a href="/">Lugtus</a></h1>
+	<span>Django CMS</span>
 
 	<h2><a href="/articulo/{{object.slug}}">{{ object.titulo }}</a></h2>
 	<span>{{ object.fecha_pub }}</span>
-	<a href="usuario/{{user}}">{{ user }}</a>
+	<a href="/autor/{{user}}">{{ user }}</a>
 	<a href="/categoria/{{object.cat}}">{{ object.cat }}</a>
 	<p>{{ object.contenido }}</p>
 </body>

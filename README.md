@@ -1,4 +1,4 @@
-#Cornix
+#Lugtus
 Version 0.0.2
 
-Blog hecho en django
+Django CMS Open Source
