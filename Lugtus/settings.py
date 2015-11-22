@@ -1,4 +1,4 @@
-#Lugtus v0.0.2
+#Lugtus v0.0.3
 #By Reykrad
 #Django CMS Open Source
 
