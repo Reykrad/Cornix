@@ -1,18 +1,21 @@
-# -*- coding: utf-8 -*- 
 from django.db import models
 from django.template.defaultfilters import slugify
+from ckeditor.fields import RichTextField
 
-class Categorias(models.Model):
-	ncate = models.CharField(max_length=15)
+class Categoria(models.Model):
+	ncat = models.CharField(max_length=15)
+
+	def __unicode__(self):
+		return self.ncat
 
 	def __str__(self):
-		return self.ncate
+		return self.ncat
 
 class Articulo(models.Model):
-	cat = models.ForeignKey(Categorias)
+	cat = models.ForeignKey(Categoria)
 	titulo = models.CharField(max_length=200)
-	contenido = models.TextField()
-	fecha_pub = models.DateField(editable=False, auto_now=True)
+	contenido = RichTextField(config_name='ckeditor')
+	fecha_pub = models.DateTimeField(editable=False, auto_now=True)	
 	slug = models.SlugField(editable=False)
 
 	def __unicode__(self):

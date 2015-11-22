@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import Articulo, Categorias
+from .models import Articulo, Categoria
 
 class ArtAdmin(admin.ModelAdmin):
 	list_display = ('titulo', 'cat', 'fecha_pub')
 	list_filter = ['fecha_pub']
 	search_fields = ['titulo']
 admin.site.register(Articulo, ArtAdmin)
-admin.site.register(Categorias)
+admin.site.register(Categoria)

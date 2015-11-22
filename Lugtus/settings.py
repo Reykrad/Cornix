@@ -24,6 +24,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.blog',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -61,14 +62,14 @@ WSGI_APPLICATION = 'Lugtus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'Lugtus.sqlite3'),
     }
 }
 
 
-LANGUAGE_CODE = 'es-es'
+LANGUAGE_CODE = 'es-hn'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'GMT'
 
 USE_I18N = True
 
@@ -81,3 +82,55 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'ckeditor': {
+        'skin': 'moono',
+        # 'skin': 'office2013',
+        'toolbar_Basic': [
+            ['Source', '-', 'Bold', 'Italic']
+        ],
+        'toolbar_YouCustomToolbarConfig': [
+            {'name': 'document', 'items': ['Source', '-', 'Save', 'Print', '-']},
+            {'name': 'basicstyles',
+             'items': ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', '-', 'Blockquote',
+                       #'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-'
+                       'Language']},
+            {'name': 'links', 'items': ['Link', 'Unlink' ]},
+            {'name': 'insert',
+             'items': ['Image', 'HorizontalRule', 'Smiley', 'PageBreak']},
+            {'name': 'youcustomtools', 'items': [
+                'Preview',
+                'Maximize',
+
+            ]},
+        ],
+        'toolbar': 'YouCustomToolbarConfig',
+        'height': 400,
+        # 'width': '100%',
+        # 'filebrowserWindowHeight': 725,
+        # 'filebrowserWindowWidth': 940,
+        # 'toolbarCanCollapse': True,
+        # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
+        'tabSpaces': 4,
+        'extraPlugins': ','.join(
+            [
+                # you extra plugins here
+                'autolink',
+                'autoembed',
+                'embedsemantic',
+                'autogrow',
+                # 'devtools',
+                'widget',
+                'lineutils',
+                'clipboard',
+                'dialog',
+                'dialogui',
+                'elementspath'
+            ]),
+    }
+}

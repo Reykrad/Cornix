@@ -9,8 +9,8 @@
 	<span>Django CMS</span>
 
 	<h2><a href="/articulo/{{object.slug}}">{{ object.titulo }}</a></h2>
-	<span>{{ object.fecha_pub }}</span>
 	<a href="/autor/{{user}}">{{ user }}</a>
+	<span>{{ object.fecha_pub|date:"F j, Y" }}</span>
 	<a href="/categoria/{{object.cat}}">{{ object.cat }}</a>
 	<p>{{ object.contenido }}</p>
 </body>

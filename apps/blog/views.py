@@ -1,7 +1,7 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from apps.blog.models import Articulo
+from apps.blog.models import Articulo, Categoria
 
 class IndexView(ListView):
 	queryset = Articulo.objects.order_by('-fecha_pub')
