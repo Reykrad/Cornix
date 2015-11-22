@@ -8,7 +8,7 @@ class IndexView(ListView):
 	context_object_name = 'queryset'
 	template_name = 'index.html'
 	model = Articulo
-	paginate_by = 2
+	paginate_by = 3
 
 class ArtDet(DetailView):
 	template_name = 'art_detail.html'

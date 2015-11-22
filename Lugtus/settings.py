@@ -1,4 +1,4 @@
-#Lugtus v0.0.3
+#Lugtus v0.0.4
 #By Reykrad
 #Django CMS Open Source
 
@@ -65,7 +65,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'Lugtus.sqlite3'),
     }
 }
-
 
 LANGUAGE_CODE = 'es-hn'
 
@@ -134,3 +133,7 @@ CKEDITOR_CONFIGS = {
             ]),
     }
 }
+
+
+#AUTH_USER_MODEL = 'apps.blog.Perfil'
+#AUTH_PROFILE_MODULE = 'apps.blog.Perfil'

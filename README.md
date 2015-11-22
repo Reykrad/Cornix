@@ -1,4 +1,4 @@
 #Lugtus
-Version 0.0.3
+Version 0.0.4
 
 Django CMS Open Source

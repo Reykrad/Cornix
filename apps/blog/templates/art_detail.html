@@ -9,9 +9,20 @@
 	<span>Django CMS</span>
 
 	<h2><a href="/articulo/{{object.slug}}">{{ object.titulo }}</a></h2>
-	<a href="/autor/{{user}}">{{ user }}</a>
+	<a href="/autor/{{object.autor}}">{{ object.autor }}</a>
 	<span>{{ object.fecha_pub|date:"F j, Y" }}</span>
 	<a href="/categoria/{{object.cat}}">{{ object.cat }}</a>
 	<p>{{ object.contenido }}</p>
+	<div id="perfil">
+		<img src="{{object.autor.avatar}}" />
+		<a href="/autor/{{object.autor}}">{{object.autor}}</a>
+		<p>{{object.autor.nombre}} {{object.autor.apellido}}</p>
+		<a href="{{object.autor.twitter}}">Twitter</a>
+		<a href="{{object.autor.facebook}}">Facebook</a>
+		<a href="{{object.autor.github}}">Github</a>
+		<a href="{{object.autor.youtube}}">Youtube</a>
+		<a href="{{object.autor.web}}">Sitio Web</a>
+		<p>{{object.autor.desc}}</p>
+	</div>
 </body>
 </html>
